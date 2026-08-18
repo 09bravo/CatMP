@@ -1,0 +1,77 @@
+import { Button } from "custom_std.slint";
+import { Slider, VerticalBox } from "std-widgets.slint";
+export component Main inherits Window {
+    min-width: 1280px;
+    min-height: 720px;
+    title: "CatMP";
+    background: black;
+    Rectangle {
+        y: parent.height * 0.94;
+        background: white;
+    }
+
+    callback play;
+    callback filemanager();
+    in property <string> file;
+    in property <image> frame;
+    out property <bool> playing;
+    in-out property <int> volume: 50;
+    in property <bool> is_image;
+    in property <string> files;
+    callback Message();
+    Image {
+        source: frame;
+    }
+
+    HorizontalLayout {
+        alignment: center;
+        spacing: 5px;
+        Button {
+            text: "About";
+            clicked => {
+                Message();
+            }
+        }
+
+        Button {
+            text: "Open";
+            clicked => {
+            filemanager();
+	    }
+        }
+    }
+
+    GridLayout {
+        width: parent.width / 10;
+        height: parent.height / 20;
+        x: parent.width * 0.01;
+        y: parent.height * 0.95;
+        Button {
+            text: "";
+            clicked => {
+                if (self.text == "") {
+                    self.text = "";
+                } else {
+                    self.text = ""
+                }
+                playing = !playing;
+                play();
+            }
+        }
+
+        Slider {
+            width: 200px;
+            minimum: 0;
+            maximum: 200;
+            value: volume;
+            changed(value) => {
+                volume = value;
+            }
+        }
+
+        Text {
+            color: black;
+            text: "\{volume}";
+        }
+    }
+}

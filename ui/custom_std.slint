@@ -1,0 +1,27 @@
+import { StandardButton } from "std-widgets.slint";
+export component Button inherits Rectangle {
+    in-out property text <=> txt.text;
+    callback clicked <=> area.clicked;
+    height: txt.preferred-height * 1.33;
+    min-width: txt.preferred-width + 20px;
+    border-radius: 5px;
+    background: white;
+    txt := Text {
+        x: (parent.width - self.width) / 2 + (area.pressed ? 2px : 0);
+        y: (parent.height - self.height) / 2 + (area.pressed ? 1px : 0);
+        font-size: 20px;
+        color: area.has-hover ? #86a0b0 : #275d7d;
+        animate color { duration: 100ms; }
+    }
+
+    area := TouchArea { }
+}
+
+export component Recipe inherits Window {
+    VerticalLayout {
+        alignment: start;
+        Button {
+            text: "Button";
+        }
+    }
+}
