@@ -1,7 +1,6 @@
 # CatMP
 CatMP is a pure rust media player made using slint.
-This is an old project (it is around 1 year old) that I made but never shared it to the public, I might pick it up again in the future but it is very barebones at the moment.
-
+This project is quite old and needs cleanup.
 # Dependencies
 - ffmpeg
 - clang (used to compile ffmpeg)
@@ -12,3 +11,4 @@ This is an old project (it is around 1 year old) that I made but never shared it
 - Video
 - Audio
 - Images
+- custom ffmepg-rust fork

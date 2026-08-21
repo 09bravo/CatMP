@@ -33,7 +33,7 @@ fn main() -> Result<()> {
                             "mp4", "mp3", "png", "jpeg", "jpg", "mkv", "flv", "ogv", "ogg", "rrc",
                             "gifv", "mng", "mov", "avi", "qt", "wmv", "yuv", "rm", "asf", "amv",
                             "m4p", "m4v", "mpg", "mp2", "mpeg", "mpe", "mpv", "3gp", "3g2", "mxf",
-                            "roq", "nsv", "f4v", "f4p", "f4a", "f4b", "mod",
+                            "roq", "nsv", "f4v", "f4p", "f4a", "f4b", "mod", "webm",
                         ],
                     )
                     .pick_file()

@@ -14,7 +14,7 @@ ringbuf = "0.3.3"
 bytemuck = "1.25.0"
 symphonia = { version = "0.5.5", features = ["all-formats"] }
 cpal = "0.17.3"
-neoffmpeg-rs = "1.0.2"
+neoffmpeg-rs = "1.0.3"
 rfd = "0.17.2"
 
 [build-dependencies]
